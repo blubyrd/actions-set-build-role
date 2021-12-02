@@ -1,7 +1,7 @@
 name: Set Build Role
 description: Sets the required build role which is needed for the provided environment infrastructure
 inputs:
-  production-role:
+  prod-role:
     description: Production Build Role 
     required: true
   dev-role:
