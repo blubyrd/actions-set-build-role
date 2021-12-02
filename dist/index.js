@@ -47,9 +47,11 @@ function run() {
             switch (environmentName) {
                 case 'prod':
                     buildRole = prodRole;
+                    core.info("Using prod build-role");
                     break;
                 default:
                     buildRole = devRole;
+                    core.info("Using dev build-role");
                     break;
             }
             core.setOutput('build-role', buildRole);
