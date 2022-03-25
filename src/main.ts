@@ -3,6 +3,7 @@ import * as core from '@actions/core'
 async function run(): Promise<void> {
   try {
     const prodRole = core.getInput('prod-role', {required: true})
+    const stageRole = core.getInput('stage-role', {required: true})
     const devRole = core.getInput('dev-role', {required: true})
     const environmentName = core.getInput('environment-name', {required: true})
     let buildRole
@@ -11,6 +12,10 @@ async function run(): Promise<void> {
         buildRole = prodRole
         core.info("Using prod build-role")
         break
+      case 'stage':
+        buildRole = stageRole
+        core.info("Using staging build-role")
+        break        
       default:
         buildRole = devRole
         core.info("Using dev build-role")
