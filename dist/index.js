@@ -41,6 +41,7 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const prodRole = core.getInput('prod-role', { required: true });
+            const stageRole = core.getInput('stage-role', { required: true });
             const devRole = core.getInput('dev-role', { required: true });
             const environmentName = core.getInput('environment-name', { required: true });
             let buildRole;
@@ -48,6 +49,10 @@ function run() {
                 case 'prod':
                     buildRole = prodRole;
                     core.info("Using prod build-role");
+                    break;
+                case 'stage':
+                    buildRole = stageRole;
+                    core.info("Using staging build-role");
                     break;
                 default:
                     buildRole = devRole;
