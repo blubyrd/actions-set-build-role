@@ -7,6 +7,9 @@ inputs:
   dev-role:
     description: Dev Build Role
     required: true
+  stage-role:
+    description: Stage Build Role
+    required: true
   environment-name:
     description: The target environment name
     required: true
